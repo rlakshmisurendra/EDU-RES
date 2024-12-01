@@ -197,7 +197,7 @@ def login_page():
             st.session_state.page = "admin"
             st.session_state.authenticated = True
             st.session_state.role = "admin"
-            st.experimental_rerun()
+            st.rerun()
 
         # Check if the username is within the allowed student ranges
         elif (username.startswith("22F01A42") and 1 <= int(username[8:10]) <= 66) or \
@@ -206,7 +206,7 @@ def login_page():
                 st.session_state.page = "user"
                 st.session_state.authenticated = True
                 st.session_state.role = "user"
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Invalid password!")
         else:
