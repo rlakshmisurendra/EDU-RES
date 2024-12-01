@@ -136,13 +136,13 @@ def admin_page():
                         if st.button(f"Delete", key=f"delete_{file_name}"):
                             delete_file(file_name, file_path)
                             st.success(f"File '{file_name}' deleted successfully.")
-                            st.experimental_rerun()
+                            st.rerun()
 
             # Option to delete entire category
             if st.button(f"Delete all files of '{selected_category}'"):
                 delete_category(selected_category)
                 st.success(f"Category '{selected_category}' and all its files deleted successfully.")
-                st.experimental_rerun()
+                st.rerun()
     else:
         st.info("No categories available to delete.")
 
@@ -151,7 +151,7 @@ def admin_page():
         st.session_state.page = "login"
         st.session_state.authenticated = False
         st.session_state.role = None
-        st.experimental_rerun()
+        st.rerun()
 
 # User Page
 def user_page():
@@ -182,7 +182,7 @@ def user_page():
         st.session_state.page = "login"
         st.session_state.authenticated = False
         st.session_state.role = None
-        st.experimental_rerun()
+        st.rerun()
 
 # Login Page
 def login_page():
